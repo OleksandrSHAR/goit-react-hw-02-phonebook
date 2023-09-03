@@ -20,7 +20,6 @@ export class App extends Component {
   state = { ...initialValues };
 
   submitForm = (values, { resetForm }) => {
-    const { name, number, contacts } = values;
     const newContacts = {
       name: values.name,
       number: values.number,
