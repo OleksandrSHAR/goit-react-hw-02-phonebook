@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Forms } from './Phonebook/Form/Form';
-import { ContactList } from './Phonebook/ContaktList';
+import { ContactList } from './Phonebook/Contaktlist/ContaktList';
 import { Filter } from './Phonebook/Filter';
 import Notiflix from 'notiflix';
 import { GlobalStyle } from 'GlobalStyle';

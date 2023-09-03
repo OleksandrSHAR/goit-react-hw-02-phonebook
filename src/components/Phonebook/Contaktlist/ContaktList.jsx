@@ -1,6 +1,8 @@
+import { ContaktWrap } from './ContactList.style';
+
 export const ContactList = ({ contacts, onDelete }) => {
   return (
-    <div>
+    <ContaktWrap>
       <ul>
         {contacts.map(({ id, name, number }) => (
           <li key={id}>
@@ -11,6 +13,6 @@ export const ContactList = ({ contacts, onDelete }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </ContaktWrap>
   );
 };
