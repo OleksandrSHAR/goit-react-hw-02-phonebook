@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Forms } from './Phonebook/Form';
+import { Forms } from './Phonebook/Form/Form';
 import { ContactList } from './Phonebook/ContaktList';
 import { Filter } from './Phonebook/Filter';
+import Notiflix from 'notiflix';
 import { GlobalStyle } from 'GlobalStyle';
 const initialValues = {
   contacts: [
@@ -20,17 +21,30 @@ export class App extends Component {
   state = { ...initialValues };
 
   submitForm = (values, { resetForm }) => {
-    const newContacts = {
-      name: values.name,
-      number: values.number,
-      id: nanoid(),
-    };
-    this.setState(prevState => ({
-      contacts: [...prevState.contacts, newContacts],
-      name: '',
-      number: '',
-    }));
-    resetForm();
+    if (
+      this.state.contacts.filter(
+        contact =>
+          contact.name.toLowerCase().trim() ===
+            values.name.toLowerCase().trim() ||
+          contact.number.trim() === values.number.trim()
+      ).length
+    ) {
+      return Notiflix.Notify.failure(
+        ` Contact ${values.name} was already entered earlier`
+      );
+    } else {
+      const newContacts = {
+        name: values.name,
+        number: values.number,
+        id: nanoid(),
+      };
+      this.setState(prevState => ({
+        contacts: [...prevState.contacts, newContacts],
+        name: '',
+        number: '',
+      }));
+      resetForm();
+    }
   };
   onDeletContacts = id => {
     this.setState(prevStete => ({
