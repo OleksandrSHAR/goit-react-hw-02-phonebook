@@ -4,7 +4,7 @@ export const Wrap = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
-export const Titel = styled.h1.h2`
+export const Titel = styled.h1`
   font-family: Epilogue;
   font-size: 40px;
   font-weight: 600;

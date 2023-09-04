@@ -24,9 +24,9 @@ ul{
 h1,h2{
   margin:0;
 }
-
-  div,h1,h2{
+div,h1,h2{
       margin-left:auto;
       margin-right:auto;
     }
+   
 `;
