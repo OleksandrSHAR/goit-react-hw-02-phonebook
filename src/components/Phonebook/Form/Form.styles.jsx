@@ -14,3 +14,8 @@ export const FormWrap = styled.div`
 export const ButForm = styled.button`
   margin-top: 20px;
 `;
+export const FormTitel = styled.h2`
+  font-family: Epilogue;
+  font-size: 30px;
+  font-weight: 600;
+`;

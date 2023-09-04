@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Forms } from './Phonebook/Form/Form';
-import { ContactList } from './Phonebook/Contaktlist/ContaktList';
+import { ContactColection } from './Phonebook/Contaktlist/ContaktList';
 import { Filter } from './Phonebook/Filter';
 import Notiflix from 'notiflix';
-import { GlobalStyle } from 'GlobalStyle';
+import { GlobalStyle } from 'components/GlobalStyle';
+import { Wrap, Titel } from './App.style';
 const initialValues = {
   contacts: [
     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -65,17 +66,17 @@ export class App extends Component {
   render() {
     const filterContacts = this.filterContacts();
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <Wrap>
+        <Titel>Phonebook</Titel>
         <Forms initialValues={this.state} submitForm={this.submitForm} />
-        <h2>Contacts</h2>
+        <Titel>Contacts</Titel>
         <Filter filter={this.state.filter} filterForm={this.filterForm} />
-        <ContactList
+        <ContactColection
           contacts={filterContacts}
           onDelete={this.onDeletContacts}
         />
         <GlobalStyle />
-      </div>
+      </Wrap>
     );
   }
 }

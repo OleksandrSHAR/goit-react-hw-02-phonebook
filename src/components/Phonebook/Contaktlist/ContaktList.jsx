@@ -1,18 +1,18 @@
-import { ContaktWrap } from './ContactList.style';
+import { ContaktWrap, ContactItem, ContactList } from './ContactList.style';
 
-export const ContactList = ({ contacts, onDelete }) => {
+export const ContactColection = ({ contacts, onDelete }) => {
   return (
     <ContaktWrap>
-      <ul>
+      <ContactList>
         {contacts.map(({ id, name, number }) => (
-          <li key={id}>
+          <ContactItem key={id}>
             {name}: <span>{number}</span>
             <button type="button" onClick={() => onDelete(id)}>
               Delete
             </button>
-          </li>
+          </ContactItem>
         ))}
-      </ul>
+      </ContactList>
     </ContaktWrap>
   );
 };

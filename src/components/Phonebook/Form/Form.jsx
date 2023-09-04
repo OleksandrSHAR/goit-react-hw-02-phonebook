@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { FormikWrap, FormWrap, ButForm } from './Form.styles';
+import { FormikWrap, FormWrap, ButForm, FormTitel } from './Form.styles';
 
 import * as Yup from 'yup';
 const validationSchema = Yup.object({
@@ -30,7 +30,7 @@ export const Forms = ({ submitForm, initialValues }) => {
       >
         <Form>
           <FormWrap>
-            <h2>Name</h2>
+            <FormTitel>Name</FormTitel>
             <Field
               type="text"
               name="name"
@@ -38,7 +38,7 @@ export const Forms = ({ submitForm, initialValues }) => {
               required
             />
             <ErrorMessage name="name" component="p" />
-            <h2>Number</h2>
+            <FormTitel>Number</FormTitel>
             <Field
               type="tel"
               name="number"
