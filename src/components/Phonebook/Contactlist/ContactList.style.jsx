@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const ContaktWrap = styled.div`
+export const ContactWrap = styled.div`
   text-align: center;
   width: 370px;
   border: 1px solid black;
@@ -17,7 +17,7 @@ export const ContactItem = styled.li`
   padding-top: 5px;
   padding-bottom: 5px;
 `;
-export const ContactList = styled.ul`
+export const ContactColect = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;

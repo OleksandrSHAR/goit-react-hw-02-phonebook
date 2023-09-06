@@ -20,13 +20,16 @@ const validationSchema = Yup.object({
   contacts: Yup.array(),
 });
 
-export const Forms = ({ submitForm, initialValues }) => {
+export const Forms = ({ submitContact }) => {
   return (
     <FormikWrap>
       <Formik
         validationSchema={validationSchema}
-        onSubmit={submitForm}
-        initialValues={initialValues}
+        onSubmit={submitContact}
+        initialValues={{
+          name: '',
+          number: '',
+        }}
       >
         <Form>
           <FormWrap>

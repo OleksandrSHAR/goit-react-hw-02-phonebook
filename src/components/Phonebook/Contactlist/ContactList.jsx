@@ -1,9 +1,9 @@
-import { ContaktWrap, ContactItem, ContactList } from './ContactList.style';
+import { ContactWrap, ContactItem, ContactColect } from './ContactList.style';
 
-export const ContactColection = ({ contacts, onDelete }) => {
+export const ContactList = ({ contacts, onDelete }) => {
   return (
-    <ContaktWrap>
-      <ContactList>
+    <ContactWrap>
+      <ContactColect>
         {contacts.map(({ id, name, number }) => (
           <ContactItem key={id}>
             {name}: <span>{number}</span>
@@ -12,7 +12,7 @@ export const ContactColection = ({ contacts, onDelete }) => {
             </button>
           </ContactItem>
         ))}
-      </ContactList>
-    </ContaktWrap>
+      </ContactColect>
+    </ContactWrap>
   );
 };
